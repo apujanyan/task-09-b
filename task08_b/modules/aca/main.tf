@@ -16,8 +16,8 @@ resource "azurerm_role_assignment" "acr_pull" {
 
 resource "azurerm_key_vault_access_policy" "aca_kv_policy" {
   key_vault_id = var.key_vault_id
-  tenant_id = azurerm_user_assigned_identity.aca_identity.tenant_id
-  object_id = azurerm_user_assigned_identity.aca_identity.principal_id
+  tenant_id    = azurerm_user_assigned_identity.aca_identity.tenant_id
+  object_id    = azurerm_user_assigned_identity.aca_identity.principal_id
 
   secret_permissions = ["Get"]
 }
