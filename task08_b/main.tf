@@ -92,7 +92,7 @@ module "aks" {
 
   tags = var.tags
 
-  depends_on = [module.acr, module.keyvault, module.aci_redis]
+  depends_on = [module.aca]
 }
 
 module "k8s" {
