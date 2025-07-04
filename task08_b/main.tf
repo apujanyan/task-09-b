@@ -59,19 +59,19 @@ module "aci_redis" {
 }
 
 module "aca" {
-  source = "./modules/aca"
-  aca_env_name = local.aca_env_name
-  aca_name = local.aca_name
-  location = azurerm_resource_group.main.location
-  resource_group_name = azurerm_resource_group.main.name
+  source                        = "./modules/aca"
+  aca_env_name                  = local.aca_env_name
+  aca_name                      = local.aca_name
+  location                      = azurerm_resource_group.main.location
+  resource_group_name           = azurerm_resource_group.main.name
   aca_env_workload_profile_type = var.aca_env_workload_profile_type
-  aca_workload_profile_type = var.aca_workload_profile_type
-  key_vault_id = module.keyvault.keyvault_id
-  acr_id = module.acr.acr_id
-  acr_login_server = module.acr.acr_login_server
-  docker_image_name = local.docker_image_name
-  redis_hostname_secret_id = module.aci_redis.redis_hostname_secret_id
-  redis_password_secret_id = module.aci_redis.redis_password_secret_id
+  aca_workload_profile_type     = var.aca_workload_profile_type
+  key_vault_id                  = module.keyvault.keyvault_id
+  acr_id                        = module.acr.acr_id
+  acr_login_server              = module.acr.acr_login_server
+  docker_image_name             = local.docker_image_name
+  redis_hostname_secret_id      = module.aci_redis.redis_hostname_secret_id
+  redis_password_secret_id      = module.aci_redis.redis_password_secret_id
 
   tags = var.tags
 

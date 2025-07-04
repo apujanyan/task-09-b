@@ -5,5 +5,5 @@ output "aks_lb_ip" {
 
 output "aca_fqdn" {
   description = "ACA FQDN."
-  value = module.aca.aca_fqdn
+  value       = module.aca.aca_fqdn
 }
