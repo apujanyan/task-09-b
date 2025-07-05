@@ -104,6 +104,8 @@ resource "azurerm_container_app" "aca" {
   }
 
   depends_on = [azurerm_role_assignment.acr_pull]
+
+  tags = var.tags
 }
 
 data "azurerm_client_config" "current" {}
